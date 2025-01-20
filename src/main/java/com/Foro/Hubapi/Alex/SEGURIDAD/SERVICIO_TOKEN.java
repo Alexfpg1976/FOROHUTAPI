@@ -22,7 +22,7 @@ public class SERVICIO_TOKEN {
         try {
             Algorithm algorithm = Algorithm.HMAC256(apiSecret);
             return JWT.create()
-                    .withIssuer("foro alura")
+                    .withIssuer("alex api")
                     .withSubject(usuario.getEmail())
                     .withClaim("id", usuario.getId())
                     .withExpiresAt(generarFechaExpiracion(24))
@@ -40,7 +40,7 @@ public class SERVICIO_TOKEN {
             try {
                 Algorithm algorithm = Algorithm.HMAC256(apiSecret);
                 verifier = JWT.require(algorithm)
-                        .withIssuer("foro alura")
+                        .withIssuer("alex api")
                         .build()
                         .verify(token);
                 verifier.getSubject();
